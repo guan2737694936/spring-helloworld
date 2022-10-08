@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--    将MyBeanFactoryPostProcessor交给spring管理-->
+    <bean class="com.gxa.spring13.spring13_02.MyBeanFactoryPostProcessor"></bean>
+
+    <!--    将MyBeanPostProcessor交给spring来管理-->
+    <bean class="com.gxa.spring13.spring13_02.MyBeanPostProcessor"></bean>
+<!--    init-method="init" destroy-method="destroy02"-->
+    <bean id="bird" class="com.gxa.spring13.spring13_02.Bird" >
+        <property name="name" value="小鸟"></property>
+    </bean>
+</beans>

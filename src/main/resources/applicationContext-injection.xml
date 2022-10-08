@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:p="http://www.springframework.org/schema/p"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--       添加 p 注入 -->
+
+<!--    set注入-->
+
+    <bean id="order01" class="com.gxa.spring04.Order">
+        <property name="id" value="10"></property>
+        <property name="name" value="zhangsan"></property>
+    </bean>
+
+<!--    构造器注入-->
+
+    <bean id="order02" class="com.gxa.spring04.Order" scope="prototype">
+        <constructor-arg name="id" value="20"></constructor-arg>
+        <constructor-arg name="name" value="李小龙"></constructor-arg>
+    </bean>
+
+<!--    p 空间的注入-->
+
+    <bean id="order03" class="com.gxa.spring04.Order" p:id="30" p:name="李武">
+
+    </bean>
+
+
+</beans>

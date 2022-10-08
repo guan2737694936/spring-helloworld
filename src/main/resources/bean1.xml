@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bean2" class="com.gxa.spring06.entity.Bean2">
+        <property name="age" value="20"></property>
+        <property name="gender" value="20"></property>
+    </bean>
+   <bean id="bean1" class="com.gxa.spring06.entity.Bean1">
+       <property name="id" value="11"></property>
+       <property name="flag" value="true"></property>
+       <property name="price" value="1100"></property>
+<!--        对象的注入-->
+       <property name="bean2">
+           <bean class="com.gxa.spring06.entity.Bean2">
+               <property name="age" value="20"></property>
+               <property name="gender" value="20"></property>
+           </bean>
+       </property>
+
+<!--        list注入-->
+       <property name="strList">
+           <list>
+               <value>11</value>
+               <value>22</value>
+               <value>33</value>
+               <value>44</value>
+           </list>
+       </property>
+
+<!--       数组注入-->
+       <property name="strArray">
+           <array>
+               <value>11</value>
+               <value>11</value>
+               <value>11</value>
+           </array>
+       </property>
+
+<!--       set注入-->
+       <property name="strSet">
+           <set>
+               <value>11</value>
+               <value>22</value>
+               <value>33</value>
+           </set>
+       </property>
+       <!--    map注入-->
+
+       <property name="map">
+           <map>
+               <entry>
+                   <key>
+                       <value>h11</value>
+                   </key>
+                   <value>w11</value>
+               </entry>
+
+               <entry>
+                   <key>
+                       <value>22</value>
+                   </key>
+                   <value>22</value>
+               </entry>
+           </map>
+       </property>
+       <!--        Properties注入-->
+       <property name="properties">
+           <props>
+               <prop key="str111" >value111</prop>
+               <prop key="str222" >value222</prop>
+               <prop key="str333" >value333</prop>
+           </props>
+       </property>
+
+       <!--        null值的注入-->
+       <property name="bean22">
+           <null></null>
+       </property>
+
+       <property name="abc" >
+           <!--            idref引用是一个字符串-->
+           <idref bean="bean2"></idref>
+       </property>
+   </bean>
+
+
+</beans>

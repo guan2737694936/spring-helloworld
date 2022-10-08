@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userDao4Mysql" class="com.gxa.spring01.dao.Impl.UserDao4Mysql"></bean>
+    <bean id="userDao4Oracle" class="com.gxa.spring01.dao.Impl.UserDao4Oracle"></bean>
+
+
+
+</beans>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--    声明工厂-->
+    <bean id="bean3Factory" class="com.gxa.spring09.Bean03Factory"/>
+
+    <!--    告诉spring创建bean3对象的时候，你要使用我给你指定的工厂，要用我给你指定工厂中的方法去给我创建bean3-->
+    <bean id="bean3" class="com.gxa.spring09.Bean03" factory-bean="bean3Factory" factory-method="getInstance">
+        <property name="name" value="张三三"></property>
+    </bean>
+
+
+</beans>

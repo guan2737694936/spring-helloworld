@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--    手动的方式注入进去的-->
+    <!--    <bean id="bean8" class="com.gxa.spring12.Bean8">-->
+    <!--        <property name="name" value="王五"></property>-->
+    <!--        <property name="bean9" ref="bean9"></property>-->
+    <!--    </bean>-->
+
+    <!--    自动装配 autowire
+        1、byType:依靠类型装配，在bean8中需要一个bean9，对spring来说，它会自动到ioc容器中去找类型为Bean9的实体对象自动给你注入进去
+        2、byName：依靠名称装配，在bean8中需要名称为bean9的，所以，就到ioc容器中找name或者id为bean9的自动注入给你
+        3、constructor:依靠构造器装配 ，需要在Bean8提供一个带Bean9的构造器，先安装名称去装配，如果没有对应的名称，就按类型装配
+        4、no:不自动装配
+        5、default:默认，参考beans标签上的default-autowire的配置
+        6、autowire-candidate 候选 true 就会被选择上
+    -->
+    <bean id="bean9" class="com.gxa.spring12.Bean9" autowire-candidate="false">
+        <property name="id" value="20"></property>
+    </bean>
+    <bean id="bean99" class="com.gxa.spring12.Bean9" autowire-candidate="true">
+        <property name="id" value="300"></property>
+    </bean>
+
+    <!--    手动的方式注入进去的-->
+<!--    <bean id="bean8" class="com.gxa.spring12.Bean8">-->
+<!--        <property name="name" value="张三"></property>-->
+<!--        <property name="bean9" ref="bean9"></property>-->
+<!--    </bean>-->
+
+    <!--    自动装配 autowire -->
+
+
+    <bean id="bean8" class="com.gxa.spring12.Bean8" autowire="byType">
+        <property name="name" value="zhangsan"></property>
+    </bean>
+
+</beans>
